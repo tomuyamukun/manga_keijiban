@@ -1,0 +1,44 @@
+.container {
+  max-width: 1920px
+  padding:  40px;
+  margin: 0 auto;
+}
+/* ヘッダー */
+.header_a {
+  color: #000;
+  background:lightgreen
+  
+}
+.header_a > .container {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+/* ロゴ */
+
+.area_logo_header .logo {
+  height: 60px;
+  width: 140px;
+  vertical-align: bottom;
+}
+
+/* ナビゲーション */
+.area_nav_header {
+  margin-left: auto;
+}
+
+/* リストナビ */
+.list_nav_header {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.list_nav_header > li + li {
+  margin-left: 40px;
+}
+
+.area_nav_header a {
+  font: 500 15px/1em 'noto sans japanese',sans-serif;
+}

@@ -4,7 +4,7 @@
 | column             | Type   | options     |
 | ------------------ | ------ | ----------- |
 | email              | string | null: false |
-| nickname           | atring | null: false |
+| nickname           | string | null: false |
 | encrypted_password | string | null: false |
 
 ### Association

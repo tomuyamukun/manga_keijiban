@@ -1,0 +1,21 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class= 'header_a'>
+ <div class = "container">
+ <%# ロゴマークとホームページのタイトル %>
+ <div class = "area_logo_header">
+  ハンバーガーメニュー表
+     <%= link_to image_tag("logo.png" ,class:"logo"), root_path %>
+  </div> 
+  <%# ログイン等のページ遷移 %>
+  <nav class = "area_nav_header">
+    <ul class ="list_nav_header">
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, user_session_path, class: "user-nickname" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
+       <% else %>
+         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+         <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+  </nav>
+ </div>
+</header>
