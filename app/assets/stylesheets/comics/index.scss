@@ -29,9 +29,10 @@
 .list {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.item-img {
+.comic-img {
   width: 20vh;
   height: 20vh;
 }

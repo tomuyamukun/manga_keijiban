@@ -1,6 +1,7 @@
 class ComicsController < ApplicationController
 
   def index 
+    @comics = Comic.all
   end
 
   def new
@@ -8,6 +9,13 @@ class ComicsController < ApplicationController
   end
 
   def create
+    @comic = Comic.new(comic_params)
+    if @comic.save
+      redirect_to root_path
+    else 
+      render :new
+    end
+    
   end
 
 private

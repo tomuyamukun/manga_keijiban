@@ -1,5 +1,9 @@
 <%= render "shared/header" %>
    <%= form_with(model: @comic, local: true) do |f| %>
+
+
+    <%= render 'shared/error_messages', model: f.object %>
+    
     <div class="img-upload">
       <div class="weight-bold-text">
         <p>漫画画像</p>
@@ -13,7 +17,7 @@
       <div class="weight-bold-text">
         漫画名
       </div>
-      <%= f.text_area :title, class:"comics-text", id:"comic-name", placeholder:"漫画名", maxlength:"40" %>
+      <%= f.text_field :title, class:"comics-text", id:"comic-name", placeholder:"漫画名", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           <p>あらすじ</p>
