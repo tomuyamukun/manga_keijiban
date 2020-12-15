@@ -1,0 +1,23 @@
+<%= render "shared/header" %>
+
+<div class="comic-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @comic.title %>
+    </h2>
+    <div class='item-img-content'>
+      <%= image_tag @comic.image ,class:"comic-box-img" %>
+    </div>
+    <div class="comic-summary">
+        <%= @comic.summary %>
+    </div>
+  </div>
+</div>
+
+ <div class="page-container">
+  <%# <%= link_to room.name, comic_room_path(@room) %> %>
+</div>
+
+
+<div class='new_rooms'>
+<%= link_to 'sinkitoukou', new_comic_room_path(@comic) %>

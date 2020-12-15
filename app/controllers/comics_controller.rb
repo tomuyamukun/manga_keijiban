@@ -18,9 +18,22 @@ class ComicsController < ApplicationController
     
   end
 
+def show
+  @comic = Comic.find(params[:id])
+end
+
+
+
+
 private
 def comic_params
   params.require(:comic).permit(:image, :title, :summary).merge(user_id: current_user.id)
 end
   
+
+def room_params
+  params.require(:room).permit(:name).merge(user_id: current_user.id)
+end
+
+
 end
