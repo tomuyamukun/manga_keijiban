@@ -3,7 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  #  has_many :user_comics      
   has_many :comics
   has_many :rooms, through: :comics
   with_options presence: true do

@@ -20,7 +20,8 @@ class ComicsController < ApplicationController
 
 def show
   @comic = Comic.find(params[:id])
-  @rooms = Room.all
+  @rooms = Room.where(comic_id: :comic_id)
+  # @room = Room.find(params[:id])
 end
 
 
