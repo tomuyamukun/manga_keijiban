@@ -15,9 +15,9 @@
 </div>
 
  <div class="page-container">
-  <%# <%= link_to room.name, comic_room_path(@room) %> %>
+  <%= render partial: "room", collection: @rooms %> 
 </div>
 
 
 <div class='new_rooms'>
-<%= link_to 'sinkitoukou', new_comic_room_path(@comic) %>
+<%= link_to 'スレッドを投稿する', new_comic_room_path(@comic) %>

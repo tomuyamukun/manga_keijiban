@@ -20,6 +20,7 @@ class ComicsController < ApplicationController
 
 def show
   @comic = Comic.find(params[:id])
+  @rooms = Room.all
 end
 
 
@@ -32,7 +33,7 @@ end
   
 
 def room_params
-  params.require(:room).permit(:name).merge(user_id: current_user.id)
+  params.require(:room).permit(:name).merge(user_id: current_user.id, comic_id: params[:comic_id])
 end
 
 
