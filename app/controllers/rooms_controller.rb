@@ -1,6 +1,8 @@
 class RoomsController < ApplicationController
 
   def index
+    @message = Message.new
+    # @messages = @room.message.all
   end
 
 
@@ -27,6 +29,10 @@ class RoomsController < ApplicationController
   private
  
   def room_params
-    params.require(:room).permit(:name).merge(user_id: current_user.id, comic_id: params[:comic_id])
+    params.require(:room).permit(:name).merge(comic_id: params[:comic_id])
+  end
+
+  def message_params
+    params.require(:message).permit(:nickname, :text).merge(comic_id: params[:comic.id], room_id: params[:room_id])
   end
 end

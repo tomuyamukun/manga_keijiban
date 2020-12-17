@@ -1,16 +1,12 @@
-たぶんこっちかな
-
-
-<%# 
-<%= form_with model: [@room, @message], class: 'form', local: true do |f| %> %>
-   <%= form_for @message,:url => {:action => :create} do |f| %>     
-    
-    <div class='form-input'>
+<%# <%= form_with model: [@room, @message], class: 'form', local: true do |f| %> %>
+   <%= form_for @message,:url => {:action => :create} do |f| %>  
+  <div class='form-input'>
    <%= f.text_field :nickname, class: 'text-nickname', placeholder: '名前' %>
   </div>
-
+  
   <div class="form-input">
     <%= f.text_field :text, class: 'text-message', placeholder: 'type a text' %>
   </div>
+  
   <%= f.submit '送信', class: 'form-submit' %>
 <% end %>

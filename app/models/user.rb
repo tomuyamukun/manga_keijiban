@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :comics
   has_many :rooms, through: :comics
+  # has_many :comic_rooms
+  has_many :messages 
   with_options presence: true do
     validates :email
     validates :nickname

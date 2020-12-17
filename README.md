@@ -35,7 +35,7 @@
 
 
 ### Association
-- belongs_to :user_comic
+- belongs_to :comic
 - has_many :messages
 
 
@@ -45,22 +45,25 @@
 ## messages テーブル
 | column      | Type       | options     |
 | ------------| ---------- | ----------- |
-| nickname    | string     | null: false |
+| nickname    | string     |             |
 | comic       | references | null: false |
+| text        | text       | null: false |
+| room        | references | null: false |
 
 ### Association
 - belongs_to :room
+- belongs_to :comic
 
 
 
 
-## user_comic テーブル
+## comic_room テーブル
 | column | Type       | options                       |
 | ------ | ---------- | ----------------------------- |
-| user   | references | null:false  foreign_key: true | 
+| room   | references | null:false  foreign_key: true | 
 | comic  | references | null:false  foreign_key: true | 
 
 ### Association
-- belongs_to :user
-- belongs_to :comic
+- belongs_to :comi
+- belongs_to :room
 - has_one :room
