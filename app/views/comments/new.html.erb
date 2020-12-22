@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
-   <%= form_for @room,:url => {:action => :create} do |f| %>
+   <%= form_for @comment,:url => {:action => :create} do |f| %>
    <%= render 'shared/error_messages', model: f.object %>
-   <%= f.text_field :name, class:"name", id:"name", placeholder:"スレッド名", maxlength:"40" %>
+   <%= f.text_field :name, class:"name", id:"name", placeholder:"名前", maxlength:"40" %>
    <%= f.text_field :text, class:"text", id:"text", placeholder:"投稿文", maxlength:"1000" %>
         <div class="toukou-btn-contents">
       <%= f.submit "投稿する" ,class:"toukou-btn" %>

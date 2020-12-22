@@ -1,0 +1,19 @@
+<li>
+ <div class='comment'>
+ <% if comment.name.present? %>
+  <h3 class='comment-name'>
+    <%= comment.name %>
+  </h3>
+<% else %>
+  <h3 class='comment-name'>
+    名無しです
+  </h3>
+<% end %>  
+  <h3 class='comment-text'> 
+    <%= comment.text %>
+  </h3>
+ </div>
+  <h3 class='comment-time'>
+    <%= comment.created_at.to_s(:datetime) %>
+  </h3>
+</li>

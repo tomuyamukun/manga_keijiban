@@ -1,4 +1,8 @@
 class ComicsController < ApplicationController
+before_action :basic_auth, only: [:new]
+
+
+
 
   def index 
     @comics = Comic.all
@@ -20,8 +24,8 @@ class ComicsController < ApplicationController
 
 def show
   @comic = Comic.find(params[:id])
-  @rooms = Room.where(comic_id: @comic.id)
-  # @rooms = @comic.rooms.all ↑は←のコードでも可
+  # @comments = Comment.where(comic_id: @comic.id)
+  @comments = @comic.comments.all
 end
 
 
@@ -29,12 +33,12 @@ end
 
 private
 def comic_params
-  params.require(:comic).permit(:image, :title, :summary).merge(user_id: current_user.id)
+  params.require(:comic).permit(:image, :title, :summary, :link).merge(user_id: current_user.id)
 end
   
 
-def room_params
-  params.require(:room).permit(:name).merge(user_id: current_user.id, comic_id: params[:comic_id])
+def comment_params
+  params.require(:comment).permit(:name).merge(user_id: current_user.id, comic_id: params[:comic_id])
 end
 
 

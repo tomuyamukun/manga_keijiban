@@ -9,12 +9,18 @@
 
 /* introduciton */
 .introduction {
+  width: 100%;
+  margin-top: 20px;
   background-color:lightgreen;
   height: 130px;
-  font-size: 20px;
-  text-align: center;
-  vertical-align: middle;
   position: relative;
+}
+
+.introduction-text {
+  display: grid;
+  place-items: center;
+  font-size: 1.5vw;
+  line-height: 2.7rem;
 }
 
 .comics_container {
@@ -23,13 +29,15 @@
   position: absolute;
   top: 350px;
   background-color: white;
+  display: flex;
+  overflow-x: auto;
+  list-style: none;
 }
 
-
 .list {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex: 0 0 auto;
+  margin: auto;
+  text-align: center;
 }
 
 .comic-img {

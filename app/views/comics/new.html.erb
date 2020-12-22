@@ -25,6 +25,12 @@
         <%= f.text_area :summary, class:"comix-text", id:"comic-info", placeholder:"あらすじ" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
+    <div class="link">
+    リンク
+    </div>
+    <%= f.text_field :link, class:"link-name", id:"link-name", placeholder:"link" %>
+
+    
 
         <div class="toukou-btn-contents">
       <%= f.submit "投稿する" ,class:"toukou-btn" %>
