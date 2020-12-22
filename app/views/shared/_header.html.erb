@@ -1,11 +1,24 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class= 'header_a'>
- <div class = "container">
- <%# ロゴマークとホームページのタイトル %>
+<div class = "container">
  <div class = "area_logo_header">
-  ハンバーガーメニュー表
-     <%= link_to image_tag("logo.png" ,class:"logo"), root_path %>
+  <div class="ham-whole">
+    <input type="checkbox" id="ham-check">
+    <label for="ham-check" class="ham-open">
+        <span></span>
+    </label>
+    <nav>
+        <ul>
+          <%= render partial: "comics/comic", collection: @comics %> 
+        </ul>
+    </nav>
+ </div>
+  <%= link_to image_tag("logo.png" ,class:"logo"), root_path %>
   </div> 
+
+
+<div id="menu-background"></div>
+
   <%# ログイン等のページ遷移 %>
   <nav class = "area_nav_header">
     <ul class ="list_nav_header">

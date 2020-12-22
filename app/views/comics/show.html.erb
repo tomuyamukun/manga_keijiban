@@ -2,22 +2,43 @@
 
 <div class="comic-show">
   <div class="item-box">
-    <h2 class="name">
-      <%= @comic.title %>
-    </h2>
     <div class='item-img-content'>
       <%= image_tag @comic.image ,class:"comic-box-img" %>
     </div>
+    <h2 class="comic-name">
+      <%= @comic.title %>
+    </h2>
+  </div>
+  <div class="summary-link">
     <div class="comic-summary">
         <%= @comic.summary %>
     </div>
-  </div>
+    <div class="comic-link">
+      <%= raw Rinku.auto_link(h(@comic.link)) %>
+    </div>
+    </div>
 </div>
+
+<div class="comment-container">
+
+<div class='new_comments'>
+<%= link_to '新規投稿する', new_comic_comment_path(@comic) %>
+</div>
+
+
 
  <div class="page-container">
-  <%= render partial: "room", collection: @rooms %> 
+ <%if @comments.any? %>
+  <ul class='content-list'>
+    <%= render partial: "comment", collection: @comments %>
+  </li>
+ <% else %>
+<li class ='content'>
+  <p>ここはあなたが好きなように語っていい場所です</p>
+  <p>好きなお題を提供して下さい</p>
+</li>
+<% end %>
+
 </div>
 
-
-<div class='new_rooms'>
-<%= link_to 'スレッドを投稿する', new_comic_room_path(@comic) %>
+</div>
