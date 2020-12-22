@@ -63,3 +63,4 @@ gem 'amazon-ecs'
 gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'rinku'
+gem "aws-sdk-s3", require: false
