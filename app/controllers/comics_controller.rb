@@ -5,7 +5,7 @@ before_action :basic_auth, only: [:new]
 
 
   def index 
-    @comics = Comic.all
+    @comics = Comic.includes(:user).all
   end
 
   def new
@@ -25,7 +25,7 @@ before_action :basic_auth, only: [:new]
 def show
   @comic = Comic.find(params[:id])
   # @comments = Comment.where(comic_id: @comic.id)
-  @comments = @comic.comments.all
+  @comments = @comic.comments.includes(:comic)
 end
 
 
