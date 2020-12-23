@@ -115,6 +115,9 @@
   display: block;
   border-bottom: 1px solid #fafaaf;
   padding: 0 0 10px 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+ 
 }
 #ham-check:checked ~ nav {
   left: 0;
