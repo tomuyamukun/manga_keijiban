@@ -54,6 +54,7 @@
 .comment{
   display: block;
   margin-right: 20px;
+  margin-top: 10px;
 }
 
 .content-list li {
@@ -62,3 +63,8 @@
   margin-top: 10px;
 }
 
+h3.comment-name {
+  margin-bottom: 15px;
+  color: darkblue;
+  text-decoration-line: underline;
+}

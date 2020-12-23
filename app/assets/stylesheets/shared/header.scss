@@ -65,6 +65,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  overflow-y: auto;
 }
 .ham-open span,
 .ham-open span:before,
@@ -77,6 +78,7 @@
   background: #fafafa;
   transition: 0.5s;
   position: absolute;
+  
 }
 .ham-open span:before {
   bottom: 8px;
